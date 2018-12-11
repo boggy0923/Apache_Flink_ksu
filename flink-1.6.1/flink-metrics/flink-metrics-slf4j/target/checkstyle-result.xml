@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-metrics/flink-metrics-slf4j/src/main/java/org/apache/flink/metrics/slf4j/Slf4jReporter.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-metrics/flink-metrics-slf4j/src/test/java/org/apache/flink/metrics/slf4j/TestUtils.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-metrics/flink-metrics-slf4j/src/test/java/org/apache/flink/metrics/slf4j/Slf4jReporterTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-metrics/flink-metrics-slf4j/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

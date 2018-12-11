@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-presto/src/main/java/org/openjdk/jol/info/ClassLayout.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-presto/src/main/java/org/openjdk/jol/info/package-info.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-presto/src/main/java/org/apache/flink/fs/s3presto/S3FileSystemFactory.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-presto/src/main/java/org/apache/hadoop/util/NativeCodeLoader.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-presto/src/main/java/org/apache/hadoop/conf/Configuration.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-presto/src/test/java/org/apache/flink/fs/s3presto/PrestoS3FileSystemBehaviorITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-presto/src/test/java/org/apache/flink/fs/s3presto/PrestoS3FileSystemITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-presto/src/test/java/org/apache/flink/fs/s3presto/PrestoS3FileSystemTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-presto/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

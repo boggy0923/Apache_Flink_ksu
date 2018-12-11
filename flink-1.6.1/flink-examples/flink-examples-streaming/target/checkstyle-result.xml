@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/twitter/util/TwitterExampleData.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/twitter/TwitterExample.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/join/WindowJoin.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/join/WindowJoinSampleData.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/wordcount/util/WordCountData.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/wordcount/WordCount.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/dfa/Transition.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/dfa/EventTypeAndState.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/dfa/State.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/StateMachineExample.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/KafkaEventsGeneratorJob.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/generator/EventsGenerator.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/generator/StandaloneThreadedGenerator.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/generator/EventsGeneratorSource.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/kafka/KafkaStandaloneGenerator.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/kafka/EventDeSerializer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/event/Event.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/event/Alert.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/statemachine/event/EventType.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/async/AsyncIOExample.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/utils/ThrottledIterator.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/ml/IncrementalLearningSkeleton.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/ml/util/IncrementalLearningSkeletonData.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/kafka/KafkaEvent.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/kafka/Kafka010Example.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/kafka/KafkaEventSchema.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/iteration/util/IterateExampleData.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/iteration/IterateExample.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/windowing/GroupedProcessingTimeWindowExample.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/windowing/util/TopSpeedWindowingExampleData.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/windowing/util/SessionWindowingData.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/windowing/WindowWordCount.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/windowing/TopSpeedWindowing.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/windowing/SessionWindowing.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/sideoutput/SideOutputExample.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/socket/SocketWindowWordCount.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/test/java/org/apache/flink/streaming/test/StreamingExamplesITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/test/java/org/apache/flink/streaming/test/scala/examples/windowing/TopSpeedWindowingExampleITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/test/java/org/apache/flink/streaming/test/examples/join/WindowJoinData.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/test/java/org/apache/flink/streaming/test/examples/windowing/TopSpeedWindowingExampleITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/test/java/org/apache/flink/streaming/test/socket/SocketWindowWordCountITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/main/resources/log4j.properties">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

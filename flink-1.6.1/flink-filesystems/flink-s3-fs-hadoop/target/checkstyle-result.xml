@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-hadoop/src/main/java/org/apache/flink/fs/s3hadoop/S3AFileSystemFactory.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-hadoop/src/main/java/org/apache/flink/fs/s3hadoop/S3FileSystemFactory.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-hadoop/src/main/java/org/apache/hadoop/util/NativeCodeLoader.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-hadoop/src/main/java/org/apache/hadoop/conf/Configuration.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-hadoop/src/test/java/org/apache/flink/fs/s3hadoop/HadoopS3FileSystemBehaviorITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-hadoop/src/test/java/org/apache/flink/fs/s3hadoop/HadoopS3FileSystemITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-hadoop/src/test/java/org/apache/flink/fs/s3hadoop/HadoopS3FileSystemTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-s3-fs-hadoop/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

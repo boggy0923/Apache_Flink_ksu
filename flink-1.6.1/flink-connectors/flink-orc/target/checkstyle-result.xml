@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-orc/src/main/java/org/apache/flink/orc/OrcBatchReader.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-orc/src/main/java/org/apache/flink/orc/OrcRowInputFormat.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-orc/src/main/java/org/apache/flink/orc/OrcTableSource.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-orc/src/test/java/org/apache/flink/orc/OrcRowInputFormatTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-orc/src/test/java/org/apache/flink/orc/util/OrcTestFileGenerator.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-orc/src/test/java/org/apache/flink/orc/OrcTableSourceTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-orc/src/test/java/org/apache/flink/orc/OrcTableSourceITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-orc/src/test/java/org/apache/flink/orc/OrcBatchReaderTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-orc/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-docs/src/main/java/org/apache/flink/docs/configuration/OptionsClassLocation.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-docs/src/main/java/org/apache/flink/docs/configuration/ConfigOptionsDocGenerator.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-docs/src/main/java/org/apache/flink/docs/util/Utils.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-docs/src/main/java/org/apache/flink/docs/rest/NoOpTransientBlobService.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-docs/src/main/java/org/apache/flink/docs/rest/RestAPIDocGenerator.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-docs/src/test/java/org/apache/flink/docs/configuration/ConfigOptionsDocsCompletenessITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-docs/src/test/java/org/apache/flink/docs/configuration/ConfigOptionsDocGeneratorTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-docs/src/test/java/org/apache/flink/docs/configuration/data/TestCommonOptions.java">
+</file>
+</checkstyle>

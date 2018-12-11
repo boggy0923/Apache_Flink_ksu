@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/configuration/MesosOptions.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/util/MesosResourceAllocation.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/util/MesosConfiguration.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/util/MesosArtifactServer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/util/MesosArtifactResolver.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/MesosApplicationMasterRunner.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/MesosTaskManagerRunner.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/RegisteredMesosWorkerNode.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/MesosResourceManager.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/LaunchableMesosWorker.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/MesosFlinkResourceManager.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/MesosResourceManagerActions.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/MesosTaskManagerParameters.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/MesosConfigKeys.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/services/MesosServicesUtils.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/services/MesosServices.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/services/StandaloneMesosServices.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/services/ZooKeeperMesosServices.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/services/AbstractMesosServices.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/store/MesosWorkerStore.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/store/StandaloneMesosWorkerStore.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/runtime/clusterframework/store/ZooKeeperMesosWorkerStore.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/Offer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/TaskSchedulerBuilder.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/StatusUpdate.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/SlaveLost.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/Registered.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/FrameworkMessage.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/Disconnected.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/ResourceOffers.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/AcceptOffers.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/ReRegistered.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/Connected.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/ExecutorLost.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/OfferRescinded.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/messages/Error.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/SchedulerProxy.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/scheduler/LaunchableTask.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/Utils.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/entrypoint/MesosSessionClusterEntrypoint.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/entrypoint/MesosJobClusterEntrypoint.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/entrypoint/MesosEntrypointUtils.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/java/org/apache/flink/mesos/entrypoint/MesosTaskExecutorRunner.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/test/java/org/apache/flink/mesos/util/MesosResourceAllocationTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/test/java/org/apache/flink/mesos/runtime/clusterframework/MesosResourceManagerTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/test/java/org/apache/flink/mesos/runtime/clusterframework/MesosFlinkResourceManagerTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/test/java/org/apache/flink/mesos/runtime/clusterframework/LaunchableMesosWorkerTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/test/java/org/apache/flink/mesos/runtime/clusterframework/MesosTaskManagerParametersTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/test/java/org/apache/flink/mesos/scheduler/OfferTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/main/resources/log4j.properties">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-mesos/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

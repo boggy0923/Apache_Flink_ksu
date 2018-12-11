@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-contrib/flink-connector-wikiedits/src/main/java/org/apache/flink/streaming/connectors/wikiedits/WikipediaEditEvent.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-contrib/flink-connector-wikiedits/src/main/java/org/apache/flink/streaming/connectors/wikiedits/WikipediaEditEventIrcStream.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-contrib/flink-connector-wikiedits/src/main/java/org/apache/flink/streaming/connectors/wikiedits/WikipediaEditsSource.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-contrib/flink-connector-wikiedits/src/test/java/org/apache/flink/streaming/connectors/wikiedits/WikipediaEditsSourceTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-contrib/flink-connector-wikiedits/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

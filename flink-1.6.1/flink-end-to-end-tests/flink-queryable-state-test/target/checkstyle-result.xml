@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-queryable-state-test/src/main/java/org/apache/flink/streaming/tests/queryablestate/Email.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-queryable-state-test/src/main/java/org/apache/flink/streaming/tests/queryablestate/QsStateClient.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-queryable-state-test/src/main/java/org/apache/flink/streaming/tests/queryablestate/EmailId.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-queryable-state-test/src/main/java/org/apache/flink/streaming/tests/queryablestate/LabelSurrogate.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-queryable-state-test/src/main/java/org/apache/flink/streaming/tests/queryablestate/QsStateProducer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-queryable-state-test/src/main/java/org/apache/flink/streaming/tests/queryablestate/QsConstants.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-queryable-state-test/src/main/java/org/apache/flink/streaming/tests/queryablestate/EmailInformation.java">
+</file>
+</checkstyle>

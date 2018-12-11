@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-quickstart/flink-quickstart-scala/src/main/resources/archetype-resources/src/main/resources/log4j.properties">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-quickstart/flink-quickstart-scala/src/test/resources/projects/testArtifact/archetype.properties">
+</file>
+</checkstyle>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/DataStreamAllroundTestJobFactory.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/artificialstate/ComplexPayload.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/artificialstate/ArtificialKeyedStateMapper.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/artificialstate/ArtificalOperatorStateMapper.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/artificialstate/builder/ArtificialMapStateBuilder.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/artificialstate/builder/ArtificialListStateBuilder.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/artificialstate/builder/ArtificialStateBuilder.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/artificialstate/builder/ArtificialValueStateBuilder.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/ExceptionThrowingFailureMapper.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/Event.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/SequenceGeneratorSource.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/DataStreamAllroundTestProgram.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/SemanticsCheckMapper.java">
+</file>
+</checkstyle>

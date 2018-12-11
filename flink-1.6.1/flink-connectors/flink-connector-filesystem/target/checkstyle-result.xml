@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/SequenceFileWriter.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/Writer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/NonRollingBucketer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/RollingSink.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/DateTimeBucketer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/Bucketer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/SystemClock.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/StringWriter.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/StreamWriterBase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/AvroKeyValueSinkWriter.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/bucketing/BasePathBucketer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/bucketing/DateTimeBucketer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/bucketing/Bucketer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/bucketing/BucketingSink.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/java/org/apache/flink/streaming/connectors/fs/Clock.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/AvroKeyValueSinkWriterTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/RollingSinkSecuredITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/RollingSinkITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/SequenceFileWriterTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/StreamWriterBaseComparator.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/bucketing/BucketingSinkMigrationTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/bucketing/BucketingSinkTestUtils.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/bucketing/BucketingSinkFsInitTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/bucketing/BucketingSinkFaultToleranceITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/bucketing/DateTimeBucketerTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/bucketing/BucketingSinkTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/RollingSinkFaultToleranceITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/java/org/apache/flink/streaming/connectors/fs/StringWriterTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/main/resources/log4j.properties">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-filesystem/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

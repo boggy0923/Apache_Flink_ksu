@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-end-to-end-tests/flink-sql-client-test/src/main/java/org/apache/flink/table/toolbox/StringRegexReplaceFunction.java">
+</file>
+</checkstyle>

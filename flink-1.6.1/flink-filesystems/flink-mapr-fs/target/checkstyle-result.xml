@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-mapr-fs/src/main/java/org/apache/flink/runtime/fs/maprfs/MapRFsFactory.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-mapr-fs/src/main/java/org/apache/flink/runtime/fs/maprfs/MapRFileSystem.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-mapr-fs/src/test/java/org/apache/flink/runtime/fs/maprfs/FileSystemAccessTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-mapr-fs/src/test/java/org/apache/flink/runtime/fs/maprfs/MapRFsFactoryTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-mapr-fs/src/test/java/org/apache/flink/runtime/fs/maprfs/MapRFreeTests.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-filesystems/flink-mapr-fs/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

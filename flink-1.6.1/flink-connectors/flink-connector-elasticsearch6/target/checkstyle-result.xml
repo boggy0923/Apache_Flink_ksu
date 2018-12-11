@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-elasticsearch6/src/main/java/org/apache/flink/streaming/connectors/elasticsearch6/Elasticsearch6BulkProcessorIndexer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-elasticsearch6/src/main/java/org/apache/flink/streaming/connectors/elasticsearch6/ElasticsearchSink.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-elasticsearch6/src/main/java/org/apache/flink/streaming/connectors/elasticsearch6/Elasticsearch6ApiCallBridge.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-elasticsearch6/src/main/java/org/apache/flink/streaming/connectors/elasticsearch6/RestClientFactory.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-elasticsearch6/src/test/java/org/apache/flink/streaming/connectors/elasticsearch6/ElasticsearchSinkITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-elasticsearch6/src/test/java/org/apache/flink/streaming/connectors/elasticsearch/EmbeddedElasticsearchNodeEnvironmentImpl.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-elasticsearch6/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-formats/flink-parquet/src/main/java/org/apache/flink/formats/parquet/ParquetWriterFactory.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-formats/flink-parquet/src/main/java/org/apache/flink/formats/parquet/ParquetBulkWriter.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-formats/flink-parquet/src/main/java/org/apache/flink/formats/parquet/avro/ParquetAvroWriters.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-formats/flink-parquet/src/main/java/org/apache/flink/formats/parquet/PositionOutputStreamAdapter.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-formats/flink-parquet/src/main/java/org/apache/flink/formats/parquet/StreamOutputFile.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-formats/flink-parquet/src/main/java/org/apache/flink/formats/parquet/ParquetBuilder.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-formats/flink-parquet/src/test/java/org/apache/flink/formats/parquet/generated/Address.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-formats/flink-parquet/src/test/java/org/apache/flink/formats/parquet/avro/ParquetStreamingFileSinkITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-formats/flink-parquet/src/test/java/org/apache/flink/formats/parquet/testutils/FiniteTestSource.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-formats/flink-parquet/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

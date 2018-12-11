@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-rabbitmq/src/main/java/org/apache/flink/streaming/connectors/rabbitmq/RMQSinkPublishOptions.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-rabbitmq/src/main/java/org/apache/flink/streaming/connectors/rabbitmq/RMQSource.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-rabbitmq/src/main/java/org/apache/flink/streaming/connectors/rabbitmq/common/RMQConnectionConfig.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-rabbitmq/src/main/java/org/apache/flink/streaming/connectors/rabbitmq/RMQSink.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-rabbitmq/src/main/java/org/apache/flink/streaming/connectors/rabbitmq/SerializableReturnListener.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-rabbitmq/src/test/java/org/apache/flink/streaming/connectors/rabbitmq/RMQSourceTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-rabbitmq/src/test/java/org/apache/flink/streaming/connectors/rabbitmq/common/RMQConnectionConfigTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-connectors/flink-connector-rabbitmq/src/test/java/org/apache/flink/streaming/connectors/rabbitmq/RMQSinkTest.java">
+</file>
+</checkstyle>

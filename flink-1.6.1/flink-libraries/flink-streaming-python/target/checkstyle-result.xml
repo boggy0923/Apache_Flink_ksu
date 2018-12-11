@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/PythonOptions.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/serialization/SerializationUtils.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/serialization/PyLongSerializer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/serialization/PythonSerializationSchema.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/serialization/PyBooleanSerializer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/serialization/PyObjectSerializer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/serialization/PyStringSerializer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/serialization/PyFloatSerializer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/serialization/PyIntegerSerializer.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/PythonIterator.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/InterpreterUtils.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/PythonCollector.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/util/AdapterMap.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/datastream/PythonWindowedStream.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/datastream/PythonSplitStream.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/datastream/PythonKeyedStream.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/datastream/PythonSingleOutputStreamOperator.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/datastream/PythonDataStream.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/datastream/PythonIterativeStream.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/PythonStreamBinder.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/environment/PythonConstants.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/environment/PythonStreamExecutionEnvironment.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/environment/PythonEnvironmentFactory.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/AbstractPythonUDF.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PythonMapFunction.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PythonSinkFunction.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PythonGeneratorFunction.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PythonFlatMapFunction.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PythonApplyFunction.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PythonOutputSelector.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PyKey.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PythonReduceFunction.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PythonIteratorFunction.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PythonFilterFunction.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/main/java/org/apache/flink/streaming/python/api/functions/PythonKeySelector.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/test/java/org/apache/flink/streaming/python/api/PythonStreamBinderTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-libraries/flink-streaming-python/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

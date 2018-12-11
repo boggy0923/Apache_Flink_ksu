@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <copy file="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/flink-examples-streaming_2.11-1.6.1-IncrementalLearning.jar" tofile="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/IncrementalLearning.jar"/>
+  <copy file="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/flink-examples-streaming_2.11-1.6.1-Iteration.jar" tofile="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/Iteration.jar"/>
+  <copy file="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/flink-examples-streaming_2.11-1.6.1-SessionWindowing.jar" tofile="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/SessionWindowing.jar"/>
+  <copy file="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/flink-examples-streaming_2.11-1.6.1-TopSpeedWindowing.jar" tofile="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/TopSpeedWindowing.jar"/>
+  <copy file="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/flink-examples-streaming_2.11-1.6.1-WindowJoin.jar" tofile="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/WindowJoin.jar"/>
+  <copy file="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/flink-examples-streaming_2.11-1.6.1-WordCount.jar" tofile="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/WordCount.jar"/>
+  <copy file="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/flink-examples-streaming_2.11-1.6.1-SocketWindowWordCount.jar" tofile="/Users/KazArioka/Downloads/flink-1.6.1/flink-examples/flink-examples-streaming/target/SocketWindowWordCount.jar"/>
+</target>
+</project>

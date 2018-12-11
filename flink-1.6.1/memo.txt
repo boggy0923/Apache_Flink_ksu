@@ -1,0 +1,80 @@
+flink-1.6.0はサンプルをやっていく用
+flink-1.6.1はソースでこれをいじって実験する
+flink-1.6.2は確認用のソース
+
+
+環境
+プロセッサ：1.3GHz Inter Core i5
+メモリ：4GB
+OS：macOS Mojave 10.14.1
+
+BackPressureのところ
+BACKPRESSURE_CLEANUP_INTERVAL
+デフォ：defaultValue(10 * 60 * 1000)
+
+BACKPRESSURE_REFRESH_INTERVAL
+デフォ：defaultValue(60 * 1000)
+
+BACKPRESSURE_NUM_SAMPLES
+デフォ：defaultValue(100)
+
+BACKPRESSURE_DELAY
+デフォ：defaultValue(50)
+
+
+第一回：
+BACKPRESSURE_CLEANUP_INTERVAL
+defaultValue(10 * 60 * 1000)
+
+BACKPRESSURE_REFRESH_INTERVAL
+defaultValue(60 * 1000)
+
+BACKPRESSURE_NUM_SAMPLES
+defaultValue(10)
+
+BACKPRESSURE_DELAY
+defaultValue(50)
+
+  BACKPRESSURE_NUM_SAMPLESを100から10に変更
+  →　コンパイルエラー
+  flink-dist
+  [ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.5.0:exec (remove-build-target-link) on project flink-dist_2.11: Command execution failed.: Stream closed -> [Help 1]
+  [ERROR] For more information about the errors and possible solutions, please read the following articles:
+  [Help 1]  http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+
+第二回：
+BACKPRESSURE_CLEANUP_INTERVAL
+defaultValue(10 * 60 * 1000)
+
+BACKPRESSURE_REFRESH_INTERVAL
+defaultValue(1000)
+
+BACKPRESSURE_NUM_SAMPLES
+defaultValue(100)
+
+BACKPRESSURE_DELAY
+defaultValue(50)
+
+  BACKPRESSURE_REFRESH_INTERVALを60 * 1000を1000に変更
+  → コンパイルは通った
+  asfiを読み込む個数が150万から500万くらいの中でバラバラ
+  BackPressureは反応なしでratioが0のままのところを見るとwordcountでは発動しないのでは？
+
+第三回：
+BACKPRESSURE_CLEANUP_INTERVAL
+defaultValue(10 * 60 * 1000)
+
+BACKPRESSURE_REFRESH_INTERVAL
+defaultValue(60 * 1000)
+
+BACKPRESSURE_NUM_SAMPLES
+defaultValue(90)
+
+BACKPRESSURE_DELAY
+defaultValue(50)
+
+  BACKPRESSURE_NUM_SAMPLESを100から90に変更
+  →　何事もなく動作
+  ratioが0のままだったのでやはりwordcountでは作動しない
+  wikiの方に変えてみる

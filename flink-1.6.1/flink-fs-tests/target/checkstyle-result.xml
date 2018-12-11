@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.4">
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-fs-tests/src/test/java/org/apache/flink/hdfstests/ContinuousFileProcessingITCase.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-fs-tests/src/test/java/org/apache/flink/hdfstests/ContinuousFileProcessingTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-fs-tests/src/test/java/org/apache/flink/hdfstests/FsNegativeRunningJobsRegistryTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-fs-tests/src/test/java/org/apache/flink/hdfstests/DistributedCacheDfsTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-fs-tests/src/test/java/org/apache/flink/hdfstests/ContinuousFileProcessingMigrationTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-fs-tests/src/test/java/org/apache/flink/hdfstests/HDFSTest.java">
+</file>
+<file name="/Users/KazArioka/Downloads/flink-1.6.1/flink-fs-tests/src/test/resources/log4j-test.properties">
+</file>
+</checkstyle>

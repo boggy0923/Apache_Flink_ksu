@@ -147,7 +147,7 @@ public class WebOptions {
 	 */
 	public static final ConfigOption<Integer> BACKPRESSURE_NUM_SAMPLES =
 		key("web.backpressure.num-samples")
-			.defaultValue(90)
+			.defaultValue(100)
 			.withDeprecatedKeys("jobmanager.web.backpressure.num-samples");
 
 	/**

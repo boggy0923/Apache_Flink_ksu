@@ -1,0 +1,632 @@
+%
+% $Id: thesis_sample.tex,v 1.9 2011/12/08 02:48:59 fukuyasu Exp $
+%
+\documentclass[11pt]{jreport}
+\usepackage{ksu_cse_thesis}
+\usepackage{indentfirst}
+%\usepackage{graphicx}  % ←graphicx.styを用いてEPSを取り込む場合有効にする
+			% 他のパッケージ・スタイルを使う場合には適宜追加
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+%% 主に表紙を作成するための情報
+%%
+
+%%  タイトル(修論の場合は英語表記も指定)
+\title{Apache FlinkのBackPressure機構の挙動解析}
+%% 英文タイトル(修論では必須)       
+\etitle{Test\\Test\\Test}
+
+%%  著者名(修論の場合は英語表記も指定)
+\author{有岡 直一}
+%%英語著者名(修論では必須)
+%\eauthor{Kentaro Hayashibara}
+
+%%指導教員名
+\supervisor{林原 尚浩}
+%%英語指導教員名(修論では必須)
+%\esupervisor{Naohiro Hayashibara}
+
+%% 卒業論文・修士論文(以下のどちらかを選択)
+\bachelar	% 卒業論文(4年生用)
+%\master  	% 修士論文(M2用)
+
+%%  学科・クラスタ
+\department{コンピュータサイエンス}
+%\department{ネットワークメディア}
+%\department{インテリジェントシステム}
+
+%%  学籍番号
+\studentid{444053}
+
+%%  卒業年度
+\gyear{2018}		% 提出年が2011年なら，2010年度
+
+%%  論文提出日
+\date{2019年1月23日}	% 修士の場合は月(2011年2月等)までとし，英語表記も指定
+%\edate{February 2011}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+%%
+%%  概要
+%%
+\begin{abstract}
+昨今，データ通信量の増加によってバッチ処理より, ストリーム処理が必要になってきた. 
+その中で, 連続的に発生し続けるデータをリアルタイムに解析, 分析等の処理を行い続けるための分散ストリーム処理プラットフォームが普及し始めた. 
+分散ストリーム処理プラットフォームの中の, ストリームプロセッシング系とされるものの中で台頭が見られるApache Flinkは他のプラットフォームと比べて, 
+\begin{itemize}
+  \item 耐故障性に優れる
+  \item ストリーム処理, バッチ処理を両方サポート
+  \item BackPressure機構の設定を変更可能
+  \end{itemize}
+ などが挙げられ, 本研究ではデータフロー制御のBackPressure機構に着目した.
+ 
+ BackPressure機構は, キューのタスクが溢れないように必要に応じて受け入れ速度を遅めたり, 止めたりする機構である. 
+ Apache Flink内でのBackPressure機構の振る舞いとしては, ジョブマネージャが50ミリ秒毎の100個のタスクのうちキューに残った個数をRatioで表し, 
+\begin{itemize}
+  \item $OK: 0 <= Ratio <= 0.10$
+  \item $LOW: 0.10 < Ratio <= 0.5$
+  \item $HIGH: 0.5 < Ratio <= 1.0$
+  \end{itemize}
+  のようにウェブインターフェースに表示される. 
+ これは, 100個のうち10個までがキューに残った場合にOKと表示されるようになっていて, Apache FlinkのBackPressureの作動と判断するための設定, 50ミリ秒の時間や100個の個数を変更することができる. 
+ しかし, Back Pressureの挙動は通信環境などの動作環境に対してどのような依存関係があるのか明らかになっていないため, 
+ 本研究では動作環境によるBackPressure機構の環境依存をContention Aware Metricsを用いて調査する. 
+
+%「京都産業大学コンピュータ理工学部卒業論文/
+%  大学院先端情報学研究科修士論文用スタイルファイル」
+%を用いて卒業論文を作成する方法を解説する．
+%本稿自身，
+%「京都産業大学コンピュータ理工学部卒業論文/
+%  大学院先端情報学研究科修士論文用スタイルファイル」
+%を用いて記述されており，例によってその使い方を示している．
+%「京都産業大学コンピュータ理工学部卒業論文/
+%  大学院先端情報学研究科修士論文用スタイルファイル」
+%では，タイトルページ，概要，目次，参考文献などの書式を設定している．
+%
+%  「京都産業大学コンピュータ理工学部卒業論文/
+%  大学院先端情報学研究科修士論文用スタイルファイル」
+%は，
+%\begin{quote}
+%  \begin{description}
+%    \item[\tt ksu\_cse\_thesis.sty:] 卒業/修士論文用スタイルファイル
+%    \item[\tt bachelor\_thesis.tex:] 卒業論文記述例
+%    \item[\tt master\_thesis.tex:] 修士論文記述例    
+%  \end{description}
+%\end{quote}
+%からなる．
+%
+%なお，この卒業論文用スタイルファイル(\TeX 版)に関する質問は，
+%メールにて
+%\begin{quote}
+%naohaya@cse.kyoto-su.ac.jp
+%\end{quote}
+%まで．
+
+\end{abstract}
+
+%%  目次
+\tableofcontents
+
+%%  図目次 (図目次をいれたければ以下のコメントをはずす)
+%\listoffigures
+
+%%  表目次 (表目次をいれたければ以下のコメントをはずす)
+%\listoftables
+
+\newpage
+\pagenumbering{arabic}	% 以降のページ番号を算用数字に
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+%%  本文はここから
+%%
+
+\chapter{はじめに}
+\section{研究背景}
+近年, 機械学習や予測分析など, IoT導入済みの企業も増え, 膨大なデータを溜め込み, バッチで分析業務を実施している例も少なくない. しかしデータ量の増大に伴ってバッチ処理にかかる時間と容量も増大しており, 夜間バッチや週末バッチなどという言葉ができていて, このままだと業務時間に侵食するのも遠くはない. ストレージ容量の点でいっても厳しくなっており, 解決策が必要になってきた.
+
+そこで, バッチ処理のようにストレージに溜め込み逐次処理をするのではなく, そのまま流動的に処理を行う"ストリーム処理"が必要となってきた. そんな中, 2011年頃にApache Stormという分散ストリーム処理プラットフォームがリリースされてから, 現2018年にはストリームデータ処理プラットフォーム群雄割拠の時代になった. それでは, 分散ストリーム処理プラットフォームとはどういうものなのか, それによってどう今の状況が変わるのか. 
+
+%バッチ処理になくて, ストリーム処理にある新たな問題が, ネットワークの遅延や切断によってデータが遅れてやってくること(Out of order)があり, ストリーム処理では複数の時間の概念が存在する. 
+%イベント時刻(EventTime), 到着時間(IngestTime), 処理時刻(ProcessingTime)があり, それぞれイベント時刻は実際にデータを生成することになったイベントが発生した時刻, 到着時刻はシステムにデータが到着した時刻, 処理時刻は実際にストリームデータを処理した時刻を指す. 
+%データが遅延していても順次きたデータを処理していればいいかと思うが, ストリーム処理においてバッチ処理にはなかったウインドウという概念が求められる. 
+%ウインドウにも種類があり, 固定長ウインドウ(Tumbling Window), スライディングウインドウ(Sliding Window), セッションウインドウ(Session Window)があり, それぞれ, 固定長ウインドウは1時間ごとなどの一定の時間ごとに区切った範囲のウインドウ, スライディングウインドウは毎分, 過去5分間分の結果を集計して出力するといった範囲が移動するウインドウ, セッションウインドウは, 一定時間以内にアクセスが連続した場合にそのアクセスを紐づけるという長さが固定されないウインドウを意味する. 
+%ここでデータが発生した順にシステムに到着する訳ではないことが大きな問題になる. 何故なら, 「17:00~17:59の間に発生したデータに対する固定長ウインドウの集計結果」を出力した後に「17:10に発生したデータ」が遅れてきたら出力が正確なものにならない.
+%%例えば, 不正検知であれば一軒のアクセスだけで不正なものだと検知できるケースは限られ, 「短い時間内に大量のログイン失敗があった」という前後のデータとの関連性で不正を検知することができる. 
+
+
+\chapter{準備}
+\section{分散ストリーム処理プラットフォーム}
+分散ストリーム処理プラットフォームとは, 連続的に発生し続けるデータをリアルタイムに解析, 分析等の処理を行い続けるプラットフォームのことを指す.  
+使われる用途としての例として, 課金処理, ライブ費用見積もり, 不正,異常検出, 不正検出結果復旧などが挙げられる. 
+構造としては, データ発生元, メッセージパス, ストリーム処理基盤, データ利用先があり, データ発生元から発生したデータを一時的にメッセージパスにデータをバッファリングし, バッファリングされたデータを処理基盤が取得してストリーム処理を行うという流れになる. 
+
+そのプラットフォームの中で, データ収集系, データフロー系, ストリームプロセッシング系という様々な種類のプラットフォームが提供されている. 
+データ収集系とは, ログやイベントを収集するようなもので, 代表的なものはKafka Streams.
+データフロー系とは, イベントデータに対してリアルタイムに加工をするもので, 代表的なものはNifi.
+ストリームプロセッシング系は, 汎用的なストリーム処理が可能なもので, Apache Storm, Spark Streaming, Apache Flinkが人気であり, 本研究ではこのストリームプロセッシング系に着目していく.
+
+複数選択肢がある中で, プラットフォームを選ぶポイントとして
+\begin{itemize}
+  \item 性能と耐故障性
+  \item Single-EventかMicro-Batch
+  \item Streaming+Batch
+  \item プログラミングモデル
+  \item 運用性
+  \end{itemize} 
+  の五つの要素が挙げられる. 
+性能と耐故障性とは,
+ リアルタイム処理を行うストリーム処理には性能が重要視されるのはいうまでもない. 
+ 加えて, 耐故障性も重要で, 故障が起こった際に, At Least Once(少なくとも一度は処理する)なのか, Exactly Once(必ず一度だけ処理する)といったメッセージが到達する信頼性の違いがプラットフォームによって存在する. 
+ 障害が発生した時のプログラミングモデルもプロダクトによって異なるが, データ収集や保存の方式によってどこで信頼性を担保するかも変わるので, システム全体のアーキテクチャを踏まえて検討する必要がある. 
+Single-EventかMicro-Batchは,
+ イベントサイズのことで, Single-Eventがイベントを1つずつ処理するので1メッセージ毎の遅延が少なくなり, Micro-Batchは小さいバッチを連続実行することでストリーム処理を実現したもので, 短い時間スパンで集計処理など行うことが可能, という違いがある. 
+Streaming + Batchは,
+ ストリーム処理とバッチ処理を両方サポートしているかどうかを指す. システム全体を考えた時にストリーム処理とバッチ処理の両方を利用するケースは多いため, バッチ処理もサポートしているかは他のプラットフォームとの違いになる.
+プログラミングモデルは,
+ 高レベルのAPIか低レベルのAPIかのことで, 高レベルのものは分散処理をあまり意識せずに実行を行うことができる. しかしその分, 障害発生時の切り分けは難しくなる.
+運用性は,
+ 大量のデータをストリーム処理するとなると, ログを出力して動作を確認するということが難しいため, 管理コンソール画面でスループットやエラー情報などを確認することができるか, 他に障害発生時に他システムへ通知を行えるかなどの機能が充実しているかが重要になる.
+
+ウインドウという概念も実装されていて,  固定長ウインドウ(Tumbling Window), スライディングウインドウ(Sliding Window), セッションウインドウ(Session Window)がある. 
+それぞれ, 固定長ウインドウは1時間ごとなどの一定の時間ごとに区切った範囲のウインドウ, 
+スライディングウインドウは毎分, 過去5分間分の結果を集計して出力するといった範囲が移動するウインドウ, 
+セッションウインドウは, 一定時間以内にアクセスが連続した場合にそのアクセスを紐づけるという長さが固定されないウインドウを意味する. 
+
+常に実行し続けるという性質上, バッチ処理以上に性能の安定性や, いきなりデータ流量が増大した時に死なないことが求められていて, これによってBackPressureという機構が採用されるようになった.
+
+
+\subsection{Apache Storm}
+Twitter社が公開したOSSで, 分散ストリーム処理エンジンの火付け役的存在である. 実装言語はClojureで, Clojureが読み書きできないと核心の問題は追えない. 現バージョンは, Storm 1.2.2(04. Jun. 2018)
+
+初期のプロダクトのため, 初期はメッセージ単位の処理であり, レイテンシは低いがスループットが悪く, データ取得側の性能がいいと溢れて失ったりなど, 問題が多かった. \cite{qiita_stream_2}
+
+YahooやSpotifyで利用されていて, 特徴としては. Single-Eventとして処理するSpout/Bolt構成のStorm Coreと, Micro-Batchとして動作するStorm Tridentの2タイプがある.  \cite{qiita_stream_1}
+故障メッセージの到達信頼性については, Storm CoreはAt Least Once, Storm TridentはExactly Onceとタイプによって変わる. \cite{slide_flink}
+
+\subsection{Spark Streaming}
+カルフォルニア大学バークレー校で開発され, 2013年に公開されたApache Sparkのリアルタイム処理エンジン部分のこと. 実装言語はScala. 現バージョンはSpark 2.4.0(Nov 02, 2018) \cite{spark}
+
+バッチ処理フレームワークSpark上で小バッチを連続実行し, ストリーム処理を実現するMicro-Batchを実現した. \cite{qiita_stream_2}
+
+Hadoopというビッグデータ処理プラットフォームと互換性があり, Hadoopファミリとしての利用例が増えている. メッセージの信頼性は, Exactly Onceに対応しているとあるが, 耐故障性を考慮するとAt Least Onceに当たる.  \cite{qiita_stream_1}
+特徴として, Sparkエコシステム上で機械学習ライブラリの利用, SQLによるデータ操作, 開発手法も同様のものが利用可能が挙げられる. \cite{qiita_stream_2}
+
+\subsection{Apache Flink}
+ベルリン工科大学およびヨーロッパのいくつかの大学とともに発足した成層圏研究プロジェクトが元となっており, 2014年にOSSとして公開された\cite{flink}. 実装言語はScala. 現バージョンはApache Flink 1.7.1(21 Dec 2018)
+
+特徴としては, バッチおよびストリーム処理の両方をサポートする. 他に耐故障性に優れ, Accurual Failure Detectorが採用されている. 
+障害対応のための状態保存として, 効率のいい分散スナップショット方式を使用しており, 自動的に各コンポーネントの状態を保存するため, 障害が発生しても自動復旧して処置を継続可能になっている. \cite{qiita_stream_2}
+加えて, 高レベルのAPIと低レベルのAPIの両方を提供しているため, 簡易なものは簡単に組むことができる. 
+メッセージの到達信頼度はExactly Once. \cite{slide_flink}
+他のプラットフォームと明確に違う点として, データのフロー制御のBackPressureの設定値を変えることができる.
+
+\subsection{3つのプラットフォームの比較}
+同じストリームプロセッシング系のプラットフォームとしてApache Storm, Spark Streaming, Apache Flinkの3つはよく比較される. わかりやすく表にしたものを表\ref{tab:compare}に示す.
+
+Yahoo!がこの3つを対象としたベンチマークを行なっており, テスト対処のアプリケーションは広告に関するもので, 100のキャンペーンがそれぞれ10の広告を持つ構成で, 5つのKafkaノードを使用して生成されたJSONイベントがデシリアライズされ, フィルタを通過し, 関連するキャンペーンと統合された上でRedisノードに格納されるというものだった. 
+Kafkaは生成するイベント数を50K/秒から170K/秒まで, 10刻みに変更可能になっていた. 
+それぞれのイベント送出率においてタプルが完全に処理されるのに必要な遅延率を比較したところ,  FlinkとStormの動作には類似点があり, いずれもレイテンシが指数的に増加する場合の遅延率は99パーセントまでほぼ直線的に変化したそうだ. 
+Storm0.10.0は, 135K/秒のイベントレート以降のデータを処理できず, また, Ackを備えたStorm0.110では, 150K/秒のデータ処理時に重大な問題があったらしい. 
+Ackを無効にした場合のStorm0.11.0のパフォーマンスは良好で, Flinkを凌駕した. しかし, Yahoo!によると, "Ackを無効にした状態では, タプルエラーの通知や処理も無効になる"そうだ. 
+Yahoo!のテストでのSparkの成績はBackPressureなしで70秒, BackPressureありで120秒と, いずれも1秒未満であったFlinkとStormに比較するとかなり見劣りするものであったそう. \cite{infoq}
+
+夏まで, Spark Streamingを触っていたが, 日本語の資料が少なく, サンプルもわかりずらく, うまく動かせているのかもよくわからなかった. その後, Apache Flinkになったが, Flinkは日本語の資料もまだ多く, チュートリアルも比較的わかり易かったので, 動かしやすかった. 難点があったとすれば, コンパイルの時間が非常に長いということである. Stormは触ったこともない.
+
+スループットに関してはApche Flinkが一番であるというものが調査段階では多く見られた. 
+それぞれ長所があるが, Apache Flinkが人気があるのも触ってから頷ける. 
+やはり, チュートリアルのわかりやすさ, 実装のしやすさは開発者にとっては重要なファクターになるのだろうと, 今回を通して学んだ. 
+
+\begin{table}
+  \caption{ストリームプロセッシング系プラットフォームの性能比較\cite{slide_flink}}
+  \label{tab:compare}
+  \begin{center}
+    \begin{tabular}{|c||c|c|c|c|c|}
+      \hline
+       & Apache Storm & Apache Storm & Spark Streaming  & Apache Flink\\
+       & Core & Trident &&\\
+      \hline \hline
+     実装言語 & Clojure & Clojure & Scala & Scala \\
+     \hline
+      開発言語 & Java,Clojure,& Java,Clojure, & Java,Scala, & Java,Scala, \\
+     & Scala,Rython,Ruby &  Scala,Python & Python, R &  Python \\
+     \hline
+     レイテンシ & とても低 & 低 & 低 & とても低 \\
+     \hline
+     スループット & 高 & 高 & 中 & 高 \\
+     \hline
+     到達性保証 & At Least Once & Exactly Once & At Least Once & Exactly Once \\
+      \hline
+      Single-Event or& Single-Event & Micro-Batch & Micro-Batch & Single-Event \\
+      Micro-Batch&&&&\\
+       \hline
+       Streaming +& Streaming & Streaming & Streaming +& Streaming + \\
+       Batch &&& Batch & Batch\\
+       \hline
+      API & 低レベル & 高レベル & 高レベル & 高レベル \\
+     & Compositional & Declarative & Declarative & Declarative \\
+     \hline
+     ウインドウ処理 & Sliding,& Sliding, & Sliding & Sliding, \\
+     &Tumbling & Tumbling & & Tumbling\\
+     \hline
+     BackPressure & 変更不可 & 変更不可 & 変更不可 & 変更可 \\
+     \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
+\section{データフロー制御}
+フロー制御は, 受信ホストの処理能力に合わせて, 発信ホストのデータ量を調整する機能を指す. フロー制御がないと, 送信側は受信側の許容量を考えずにデータを流し続けるため, 受信側がデータを取りこぼす恐れが生じる. 
+そのため, TCPではウインドウ制御により, 受信側が受信可能なデータ量を送信側へ通知してデータ量を調整する仕組みが採用されている. 
+
+TCPでのデータ転送にはコネクションの確立が必要となる. コネクションの確立には, スリーウェイハンドシェイクと呼ばれる手法が用いられる. 
+スリーウェイハンドシェイクは最初にSYNを送り, 次にACKを送り互いに確認が取れたらコネクションの確立となる. 
+クライアント側から順に【(クライアント)SYNを送る→(宛先)ACK+SYNを送る→(クライアント)ACKを送る】といった順に応答確認を取る.
+
+TCPではスリーウェイハンドシェイクでコネクションが確立でき次第, セグメントの送信をするが, セグメントは分割して送られる. \cite{qiita_flow}
+その分割したものを一気に送ってもデータを保留できるバッファが溢れてしまうことがある. これをバッファオーバーフローという. このバッファオーバーフローを防ぐためにウインドウ制御というものを使う.
+
+\subsection{スライディングウインドウ}
+スライディングウインドウは, ウインドウ制御の種類の一つ. 
+「一つのメッセージを送信したらそれへの確認応答を待つ」という最もな単純な手法では, ネットワークの伝播遅延が大きいと送信側に待ち時間が必要なため, 転送のスループットが大幅に下がる. 
+この欠点を回避するため, スライディングウインドウは, それぞれの応答確認を待たずに複数のセグメントを送信する. 
+
+バッファの容量はそれぞれ宛先によって異なる. スリーウェイハンドシェイクでは, ACK送信後のSYNが帰ってきたときに付随したウインドウサイズ(バッファの容量)を知ることができる. 
+その容量によって送るセグメントを変えて送信していく. \cite{qiita_flow}
+そうなると宛先のウインドウサイズ分のデータしか送られず, 処理が終わったらまたウインドウサイズいっぱいまでデータが来るので, まるでウインドウがスライドしているように見えることからスライディングウインドウという.
+
+応答確認を都度実施していると遅くなるので, ウインドウサイズ分だけまとめて確認応答をすることで, 
+オーバーヘッドを少なくして高速化することができる.
+
+\subsection{BackPressure}
+BackPressureとは, 3comが開発したLANスイッチ向けフロー制御で, LANスイッチ向けフロー制御でのBackPressureの仕組みは, トラフィックの集中によってスイッチングハブの受信バッファが溢れそうになった場合, データ送信元ノードにコリジョン信号を送ることでデータ送信の送信速度を低下, あるいは一時中断させるというものになっている.\cite{weblio_backpressure}
+
+これをデータのフロー制御として応用した. 非同期のメッセージパッシングでコンポーネント間の通信を行うとき, 処理が早いProducerが処理が遅いConsumerに向けてデータを送信し続けた場合, Consumer側のバッファが溢れてデータの損失の恐れがある. 
+よって, BackPressureは, ConsumerからProducerに対して, 受け入れ可能な個数を通知し, Producerに当たるコンポーネントは, Consumerの速度に合わせてメッセージを送信したり, 間に合わない分は捨てたりなどの対策を行う. \cite{slide_backpressure}
+これによって各コンポーネントが速度を調整してバランスをとって, 上流のスループットを犠牲にして, システム全体の安定を図るような機構がBackPressureのシステムになる.
+
+Apache Flink内でもBackPressure機構は採用されており, デフォルトの設定では, ジョブマネージャが50ミリ秒ごとにキュー中の100個のタスクを見て, 100個のタスクのうちどの程度処理されずに残ったかでBackPressureの強度を判定する. 残った個数/100がRatioになる.
+\begin{itemize}
+  \item $OK: 0 <= Ratio <= 0.10$
+  \item $LOW: 0.10 < Ratio <= 0.5$
+  \item $HIGH: 0.5 < Ratio <= 1.0$
+  \end{itemize} 
+このように100個のうち, 10個以下の場合, ウェブインターフェースに"OK"という表示とともに, BackPressureなしで処理される.  
+ 同様に11個以上50個以下の場合は"LOW"という表示で受け入れ速度を遅めるようにBackPressureをかけ, 51個以上100個までの場合は"HIGH"と表示され, 上流へ送信を一旦止めるようBackPressureをかける. 
+
+そして, デフォルトでは, といった通り, このBackPressureをかける判定をするサンプル時間, サンプル個数, そしてリフレッシュするインターバルの設定が変更可能になっている. 他のプラットフォームでは, BackPressureを使うか使わないかのTRUE/FALSEしか設定できない.
+
+設定の変更をする場合は, "flink-1.6.1/flink-core/src/main/java/org/apache/flink/configuration
+/WebOption.java"の, 
+"BACKPRESSURE\_REFRESH\_INTERVAL = ... "で
+リサンプリングのためのリフレッシュをする間隔を変更でき, 
+"BACKPRESSURE\_NUM\_SAMPLES = ..." でサンプリングするタスクの個数を変更することができる.
+その下の"BACKPRESSURE
+\_DELAY = ..."では, BackPressureを作動させるか判断するためのサンプリング間隔を変更することができる.
+それぞれデフォルト値は, 1分, 100個, 0.05秒となっている.
+そこの部分のソースを付録に載せておく.
+
+
+\chapter{問題点と研究目的}
+\section{問題点}
+関連研究でApache Flinkを用いてBackPressureに関する研究はあるが, Apache FlinkのBackPressure機構の挙動が, 
+動作環境に対してどのような依存関係があるのかはまだ明らかになっていない. 
+例えば, 何かプログラムを動かしたときにBackPressureがHIGHになっていても, 対応できない環境があるということが考えられる. 
+
+\section{目的}
+本研究の目的として, 動作環境によってBackPressureがどのような挙動をするのかの解析を行うこと, が目的となる. 
+具体的には, Apache Flink 1.6.1を使用して, Apache Flinkがチュートリアル用として提供している"SocketWindowWordCount.jar"に変更を加える. 
+そしてSource → Flow → Sinkの系を作り, そこのFlow部分でDelayを実装し, Contention Aware Metrics\cite{cam}を用いて, Delayを起こさないときと起こしたときのスループットを計測する実験を行い, ネットワークに対してFlow部分のBackPressureは, どのような影響を与えるのかを明らかにする. 
+ 
+
+\chapter{実験}
+\section{実験環境}
+実験環境として, Apache Flink(flink-1.6.1), Apache Maven(apache-maven-3.5.4)を使用した. 
+
+
+\section{実験概要}
+Apache Flinkのチュートリアルで使う"SocketWindowWordCount.jar"に変更を加えて, 
+Contention Aware Metrics\cite{cam}を使ってBackPressureをコントロールした時のスループットを計測する.
+
+まずApache Flinkのソースダウンロードする. 
+このパッケージを本研究ではJavaで扱うので, そのプロジェクト用管理ツールであるApache Mavenの準備をしておく.
+Apache Mavenはpom.xmlというプロジェクトファイルを作り, そこで宣言されている実行が行える. 
+Apache Flinkではpom.xmlファイルも用意してあるので, 
+ダウンロードした"flink-1.6.1"のディレクトリに移り, pom.xmlがあるのを確認して, コンパイルをする.
+ "\$ mvn clean package -DskipTests"でコンパイルを始める. 
+-DskipTestsを入れることで多少コンパイル時間を短くできるが, それでも40分ほどかかる. 
+コンパイルが完了したら, ディレクトリ内に"/build-target"というエイリアスの実行用フォルダができる. 
+
+"SocketWindowWordCount.jar"はどういうプログラムかというと, 
+5秒ごとにローカルサーバーに入っている文字を読んでカウントして, 
+文字列ごとにその数を出力するものになっている.
+"SocketWindowWordCount.jar"の使い方は, "./flink-1.6.1/build-target/" に移動し, 
+"./bin/start-cluster.sh"でローカルのクラスタを起動する.
+別窓でカウントする文字を入れる用のローカルサーバーを"\$ nc -l 9000"で立ち上げる. 
+そして今回の実験では, なるべく大きい処理を見たいので, 
+このローカルサーバーに2GBほどあるテキストファイルを入れる. 
+そのため,  nc -l 9000 < asfi.txt"という風にasfi.txtを突っ込む.なので, この作業は
+/bluid-targetディレクトリの外で構わない.
+そして, WordCountのプログラムを先ほどのポートと合わせて実行する.  "\$./bin/flink run examples/streaming/SocketWindowWordCount.jar --port 9000"
+これで実行できるのだが, 今回はBackPressureの挙動を確認したいので, "\$./bin/flink run -p 2 examples/streaming/SocketWindowWord
+Count.jar --port 9000"
+と, -p 2を加える. これはParallelismのpでこれを2にすることでSocketWindowWordCountが2つ同時に動くことになる.
+こうすることで処理が重くなり, BackPressureの作動を確認できる. 
+あと, ここでパラレルにするため, ローカルクラスタをもう一つ"./bin/start-cluster.sh"で起動されておかなくてはならない.
+この実行中の様子をlocalhost:8081にアクセスすると, ウェブインターフェースで確認することができる. 
+そこで走っているジョブをクリックすると, 
+\begin{quote}
+Source: Socket Stream→ Flat Map → Window(TumblingProcessingTimeWindows(5000), ProcessingTimeTrigger, ReduceFunction\$1, PassThroughWindowFunction) → Sink: Print to Std. Out
+\end{quote}
+という図が見える.  
+
+\subsection{Contention Aware Metrics}
+Akkaで用いられるストリーム処理のパイプラインを表すSource, Flow, Sinkというものがある. 
+Sourceは一つの出力を持つ処理単位で, 処理における入力のノードに当たる. 
+Sinkは一つの入力を持つ処理単位で, 処理における出力のノードに当たる.
+Flowは, SourceとSInkの間で, 1つの入力と1つの出力を持つ処理単位で, 入力ノードと出力ノードの中継処理ノードに当たる. 
+Contention Aware Metrics\cite{cam}では, このSource→FlowとFlow→Sinkのネットワークの速さを1として, Flowにλというパラメータを入れる.
+このλは, ネットワークに対するFlowの相対処理速度を表し, 
+λが1.5など, 1.0より大きい場合は, ネットワークに対して処理が遅い中間ノードが存在することを表し, 
+λが0.5など1.0より小さいと場合は, 中間処理ノードに対して, ネットワークの速度が遅いことを表す. 
+これを実装するため, "SocketWindowWordCount.jar"のソースである"WordCount.java"にThread.sleep()を入れて, 
+Flat Mapで入力された文字を整えて, WordCountに渡すところでDelayを発生させてる. それによるスループットを測り, 
+Delayを発生させない時のスループットと比較する. 発生させるDelayはBackPressureが作動を決定する0.05秒にする.
+λの計算方法は, 
+\begin{quote}
+ 1 : λ = Thread.sleep(0)の時のスループット : Thread.sleep(0.05)の時のスループット
+\end{quote}
+
+%\section{実験結果}
+%Delayを0の状態での計測の6回の平均が8分57秒, Delayを0.05にした時のスループットは〇〇, 
+%つまりλ= 〇〇になって, ●●ネットワークに対して処理が遅い中間ノードが存在することを表す, or , 中間処理ノードに対して, ネットワークの速度が遅いことを表す●●.
+%
+%\section{考察}
+%Delayを0.05, つまりBackPressureが作動を判断する時間秒止めることで,
+% BackPressureが発動して処理が止まってスループットが悪くなるだろうとは思っている. 
+% 
+%●結果によって増やす. でなければ削除. ●
+
+\chapter{まとめ}
+\section{まとめ}
+分散ストリーム処理プラットフォーム群雄割拠の時代の中, データフロー制御のBackPressure機構の設定を変更できるApache Flinkに着目した. 
+そのBackPressure機構は動作環境に対してどのような依存関係がるのかが明らかになっていなかったため, 
+Apache Flinkのサンプルとして提供される"WordCount.java"に処理を遅らせるDelayを実装することによって, 
+Contention Aware Metricsのλというパラメータを使ってBackPressureによるネットワークと中間処理ノードの関係を計測した.
+\section{今後の課題}
+せっかくBackPressureの設定を変更できるApache Flinkを選択したにも関わらず, BackPressureの設定値を変更せずに計測したため, 
+BackPressureの設定値を変えることによってどこまでスループットを高めることができたり, 
+高いスループットの状態での環境依存を見ていくことが今後の課題となる.
+他に今回はFlowの中身がFlatMapとWordCountだけだが, もっと複雑な処理を行うものになった場合のスループットの変化も見たい.
+
+
+
+%\chapter{図，表，数式}\label{chap:fig-tab-exp}
+%
+%\section{図}
+%
+%%{\tt figure}環境を利用することによって図にキャプション
+%%(\verb|\caption|)を付けることができる．図に付けられたキャプションは
+%%\verb|\listoffigures|によって図目次として出力される．図には章ごとに通
+%%し番号が付けられ，キャプションに\verb|\label|を設定しておくと，
+%%``図\ref{fig:sample}''のように\verb|\ref|によって図を番号で参照するこ
+%%とができる．図\ref{fig:sample}に{\tt figure}環境を用いた記述例を示す．
+%
+%\begin{figure}
+%  \begin{center}
+%    ここで図を取り込む．
+%%     試しに，tiger.psが自分のマシンのどこに格納されているかを調べて
+%%     以下の命令を有効にしてみて下さい．
+%%     ただし，同時に\begin{document}より前にある\usepackage{graphicx}
+%%     も有効にする必要があります．
+%%     以下の例ではついでに四角で囲っています．
+%    \framebox{\includegraphics[width=5cm,clip]{/Users/KazArioka/Desktop/kei.png}}
+%  \end{center}
+%  \caption{図の例}
+%  \label{fig:sample}
+%\end{figure}
+%%
+%また，{\tt graphicx.sty}などのスタイルファイルを利用することによって
+%EPS形式の図を文章の中に取り込むことができる．
+%この場合，\verb|\begin{document}|の前に\verb|\usepackage{graphicx}|を
+%追加する．
+%
+%\section{表}
+%
+%{\tt table}環境を利用することによって図と同じように，キャプションをつ
+%けたり，ラベルにより参照したりすることができる．また
+%\verb|\listoftables|によって表目次として出力される．
+%表\ref{tab:sample}に{\tt table}環境で作成した表を示す．
+%
+%\begin{table}
+%  \caption{表の例}
+%  \label{tab:sample}
+%  \begin{center}
+%    \begin{tabular}{|c|c|c|}
+%      \hline
+%      8 & 3 & 4\\
+%      \hline
+%      1 & 5 & 9 \\
+%      \hline
+%      6 & 7 & 2 \\
+%      \hline
+%    \end{tabular}
+%  \end{center}
+%\end{table}
+%
+%\section{数式}
+%
+%\TeX では数式のための機能が豊富である．
+%{\tt equation}環境などを利用することによって数式に番号を付けることがで
+%きる．図や表と同じくラベルを付けておけば，``式\ref{exp:sample}''のよう
+%に数式を番号で参照することができる．
+%
+%\begin{equation}
+%  y = ax^2 + bx + c \label{exp:sample}
+%\end{equation}
+
+%\chapter{参考文献}
+%
+%文献を参照する場合には，論文の最後に参考文献として列挙するとともに，
+%\verb|\cite|を使って，例えば，
+%\begin{quote}
+%  文献\cite{latex}によれば…
+%\end{quote}
+%や，
+%\begin{quote}
+%  …である\cite{latex2e}．
+%\end{quote}
+%のように参照する．
+%
+%文献の列挙には，{\tt thebibliography}環境などを用いる\footnote{使い方
+%は，この資料のソースを参照．}．
+
+%%% \chapter{ボリューム確認用ページ}
+%
+%%% 次のページでは，ページあたりのボリュームを確認するために無駄な文章が延々
+%%% と続いています．
+%
+%%% \newpage
+%
+%%% 1行当たりの文字数は…\\
+%%% １２３４５６７８９０
+%%% １２３４５６７８９０
+%%% １２３４５６７８９０
+%%% １２３４５６７８９０
+%%% １２３４５６７８９０
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%
+% 謝辞
+
+ \begin{acknowledgements}
+林原先生, 不出来な自分を3年も面倒見てくださって感謝しています. 
+先生の研究室の卒業として何か貢献できるよう社会に入っても精進してまいります,
+
+今江さん, 佑さん, 嶋田さん, 杉原さん, アスフィーさん, 中川さん, 研究やスライド作りなどたくさんお世話になりました. 本当にありがとうございました.
+ \end{acknowledgements}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%
+%%% 参考文献
+%%%
+\begin{thebibliography}{99}
+%\bibitem{ksu_thesis}
+%    京都産業大学コンピュータ理工学部卒業論文/大学院システム工学研究科修士論文用スタイルファイル，
+%    ``{\tt http://rudds.kyoto-su.ac.jp/\symbol{"7E}naohaya/}''．
+%\bibitem{latex}
+%    奥村晴彦 著，\LaTeX 入門---美文書作成のポイント---，技術評論社，1993．
+%\bibitem{latex2e}
+%    奥村晴彦 著，[改定第3版] \LaTeXe~美文書作成入門，技術評論社，2004．
+%\bibitem{texbasic}
+%    OfficeMASA，神代英俊，長島秀行 著，\TeX の基礎，
+%    ソフトバンクパブリッシング，2002．
+%\bibitem{latexcomp}
+%    M. Goossens, F. Mittelbach, A. Samarin 共著，
+%    アスキー書籍編集部 監訳，The \LaTeX コンパニオン，アスキー出版局，1998．
+\bibitem{qiita_stream_1}
+Qiita「分散ストリーム処理エンジンあれこれ」(最終閲覧日：2019年1月19日)
+https://qiita.com/takanorig/items/aaa4f116d1564ec20dd3
+\bibitem{qiita_stream_2}
+Qiita「ストリーム処理とは何か？＋2016年の出来事」(最終閲覧日：2019年1月19日)
+https://qiita.com/kimutansk/items/60e48ec15e954fa95e1c
+\bibitem{spark}
+Apache Spark Streaming「Spark Streaming makes it easy to build scalable fault-tolerant streaming applications.」(最終閲覧日：2019年1月19日)
+https://spark.apache.org/streaming/
+\bibitem{slide_flink}
+Slide Share「IoT時代におけるストリームデータ処理と急成長の Apache Flink」(最終閲覧日：2019年1月19日)
+https://www.slideshare.net/takanorig/iot-apache-flink
+\bibitem{flink}
+Apache Flink「Apache Flink - Stateful Computations over Data Streams」(最終閲覧日：2019年1月19日)
+https://flink.apache.org/
+\bibitem{infoq}
+著者:Abel Avram 訳:吉田 英人「Yahoo!がApache Flink, Spark, Stormのベンチマークを実施」InfoQ 投稿日:2016年2月2日 (最終閲覧日：2019年1月19日)
+https://www.infoq.com/jp/news/2016/02/yahoo-flink-spark-storm
+\bibitem{qiita_flow}
+Qiita「OSI参照モデルまとめ」(最終閲覧日：2019年1月19日)
+https://qiita.com/tatsuya4150/items/474b60beed0c04d5d999
+\bibitem{flow_control}
+ASCII.jp × TECH「帯域を効率的に利用するTCPの仕組みとは？」(最終閲覧日：2019年1月19日)
+http://ascii.jp/elem/000/000/444/444152/
+\bibitem{slide_backpressure}
+SlideShare「Reactive Systems と Back Pressure」(最終閲覧日：2019年1月19日)
+https://www.slideshare.net/zoetrope/reactive-systems-back-pressure
+\bibitem{weblio_backpressure}
+weblio辞書「Back Pressure」(最終閲覧日：2019年1月19日)
+https://www.weblio.jp/content/Back+Pressure
+\bibitem{cam}
+P.Urban, X. Defego, A.Shiper, “Contention-aware metrics for distributed algorithms: comparison of atomic broadcast algorithms”, ICCCN 2000
+
+\end{thebibliography}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%
+%%% 付録
+%%%
+\appendix
+
+\chapter{WebOption.java}
+
+"flink-1.6.1/flink-core/src/main/java/org/apache/
+flink/configuration/WebOption.java"の,  BackPressure機構の設定部分
+
+{
+\footnotesize
+
+\begin{verbatim}
+/**
+ * Time after which cached stats are cleaned up if not accessed.
+ * .defaultValue(10 * 60 * 1000) 10min
+ */
+public static final ConfigOption<Integer> BACKPRESSURE_CLEANUP_INTERVAL =
+	key("web.backpressure.cleanup-interval")
+		.defaultValue(10 * 60 * 1000)
+		.withDeprecatedKeys("jobmanager.web.backpressure.cleanup-interval");
+
+/**
+ * Time after which available stats are deprecated and need to be refreshed (by resampling).
+ * 	.defaultValue(60 * 1000) 1min
+ */
+public static final ConfigOption<Integer> BACKPRESSURE_REFRESH_INTERVAL =
+	key("web.backpressure.refresh-interval")
+		.defaultValue(60 * 1000)
+		.withDeprecatedKeys("jobmanager.web.backpressure.refresh-interval");
+
+/**
+ * Number of stack trace samples to take to determine back pressure.
+ * 	.defaultValue(100)
+ */
+public static final ConfigOption<Integer> BACKPRESSURE_NUM_SAMPLES =
+	key("web.backpressure.num-samples")
+		.defaultValue(100)
+		.withDeprecatedKeys("jobmanager.web.backpressure.num-samples");
+
+/**
+ * Delay between stack trace samples to determine back pressure.
+ * .defaultValue(50) 0.05sec
+ */
+public static final ConfigOption<Integer> BACKPRESSURE_DELAY =
+	key("web.backpressure.delay-between-samples")
+		.defaultValue(50)
+		.withDeprecatedKeys("jobmanager.web.backpressure.delay-between-samples");
+
+\end{verbatim}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\end{document}
